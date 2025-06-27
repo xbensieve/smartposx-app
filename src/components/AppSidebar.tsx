@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Home, Package, ShoppingCart, Settings } from "lucide-react";
 import {
   Sidebar,
@@ -21,10 +21,7 @@ const navigationItems = [
 
 export function AppSidebar() {
   const { state } = useSidebar();
-  const location = useLocation();
   const collapsed = state === "collapsed";
-
-  const isActive = (path: string) => location.pathname === path;
 
   return (
     <Sidebar className={collapsed ? "w-14" : "w-64"} collapsible="icon">
